@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【仁王3】サムライとニンジャどっちが強い？実際に両方使い込んでわかったこと｜ぼやきログ</title>
+  
+<style>
+  :root{--bg:#0d0d10;--bg2:#13131a;--bg3:#1a1a24;--border:#252535;--border2:#303048;
+    --accent:#7c6aff;--accent2:#a594ff;--green:#4ade80;--red:#f87171;--yellow:#fbbf24;--cyan:#22d3ee;
+    --text:#ddd8f0;--muted:#7a7a9a;--faint:#44445a;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;font-weight:300;line-height:1.85;}
+  a{color:var(--accent2);text-decoration:none;}a:hover{text-decoration:underline;}
+  header{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+  .hi{max-width:1060px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+  .lw{display:flex;align-items:center;gap:.7rem;}
+  .li{width:32px;height:32px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+  .lt{font-family:'Share Tech Mono',monospace;font-size:1rem;color:#fff;}
+  .ls{font-size:.58rem;color:var(--muted);font-family:'Share Tech Mono',monospace;}
+  nav{display:flex;}
+  nav a{font-size:.72rem;letter-spacing:.06em;color:var(--muted);padding:.35rem .7rem;border:1px solid transparent;transition:all .18s;}
+  nav a:hover{color:var(--accent2);border-color:var(--border2);background:var(--bg3);text-decoration:none;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 1.5rem;}
+  .layout{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;padding:2rem 0 4rem;}
+  .bc{font-size:.7rem;color:var(--faint);margin-bottom:1rem;font-family:'Share Tech Mono',monospace;padding-top:1.2rem;}
+  .bc a{color:var(--muted);}
+  .cat{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.15em;padding:.2rem .6rem;border:1px solid;text-transform:uppercase;margin-bottom:1rem;}
+  .cg{color:var(--accent2);border-color:rgba(124,106,255,.4);background:rgba(124,106,255,.08);}
+  .cr{color:var(--red);border-color:rgba(248,113,113,.4);background:rgba(248,113,113,.08);}
+  .cd{color:var(--green);border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.08);}
+  .ca{color:var(--cyan);border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.08);}
+  .cga{color:var(--yellow);border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.08);}
+  h1.at{font-family:'Noto Serif JP',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;line-height:1.4;color:#fff;margin-bottom:1rem;}
+  .am{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint);letter-spacing:.08em;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+  .ab p{margin-bottom:1.2rem;font-size:.92rem;}
+  .ab h2{font-family:'Noto Serif JP',serif;font-size:1.2rem;font-weight:700;color:#fff;margin:2.5rem 0 1rem;padding:.7rem 1rem;border-left:4px solid var(--accent);background:var(--bg2);}
+  .ab h3{font-size:1rem;font-weight:700;color:var(--accent2);margin:1.8rem 0 .7rem;padding-bottom:.4rem;border-bottom:1px solid var(--border2);}
+  .tip{background:rgba(124,106,255,.08);border:1px solid rgba(124,106,255,.3);border-left:4px solid var(--accent);padding:1rem 1.2rem;margin:1.5rem 0;font-size:.88rem;}
+  .tip-h{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--accent);margin-bottom:.5rem;}
+  .warn{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.3);border-left:4px solid var(--red);padding:1rem 1.2rem;margin:1.5rem 0;font-size:.88rem;}
+  .warn-h{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--red);margin-bottom:.5rem;}
+  table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.85rem;}
+  th{background:var(--bg3);color:var(--accent2);padding:.6rem .8rem;text-align:left;border:1px solid var(--border2);font-weight:500;font-size:.8rem;}
+  td{padding:.6rem .8rem;border:1px solid var(--border);vertical-align:top;}
+  tr:nth-child(even) td{background:var(--bg2);}
+  .ad{background:var(--bg2);border:1px dashed var(--border2);padding:1.5rem;margin:2rem 0;text-align:center;position:relative;}
+  .adl{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--faint);text-transform:uppercase;position:absolute;top:.4rem;left:.6rem;}
+  .adp{font-size:.78rem;color:var(--muted);padding:1.5rem 0;}
+  .adh{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint);margin-top:.5rem;}
+  .aff{background:var(--bg2);border:1px solid var(--border2);padding:1.2rem;margin:1.5rem 0;display:flex;gap:1.2rem;align-items:center;}
+  .affi{width:72px;height:72px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+  .affn{font-weight:500;font-size:.88rem;color:#fff;margin-bottom:.3rem;}
+  .affp{font-family:'Share Tech Mono',monospace;font-size:.75rem;color:var(--yellow);margin-bottom:.6rem;}
+  .affbs{display:flex;gap:.5rem;flex-wrap:wrap;}
+  .ab1{display:inline-block;padding:.4rem .9rem;font-size:.72rem;background:#ff9900;color:#111;cursor:pointer;}
+  .ab2{display:inline-block;padding:.4rem .9rem;font-size:.72rem;background:#bf0000;color:#fff;cursor:pointer;}
+  .affnt{font-size:.65rem;color:var(--faint);margin-top:.4rem;font-family:'Share Tech Mono',monospace;}
+  .toc{background:var(--bg2);border:1px solid var(--border2);padding:1.2rem 1.5rem;margin:1.5rem 0 2rem;}
+  .toc-h{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:.8rem;}
+  .toc ol{padding-left:1.3rem;}.toc li{font-size:.82rem;margin-bottom:.3rem;color:var(--muted);}
+  .toc a{color:var(--muted);}.toc a:hover{color:var(--accent2);}
+  .rel{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+  .sl{font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;}
+  .rg{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
+  .rc{background:var(--bg2);border:1px solid var(--border);padding:1rem;cursor:pointer;transition:border-color .2s;}
+  .rc:hover{border-color:var(--accent);}
+  .rcat{font-family:'Share Tech Mono',monospace;font-size:.58rem;letter-spacing:.15em;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase;}
+  .rt{font-size:.8rem;line-height:1.5;color:var(--text);}
+  .sb{}
+  .wg{background:var(--bg2);border:1px solid var(--border);padding:1.2rem;margin-bottom:1rem;}
+  .wh{font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:.7rem;margin-bottom:1rem;}
+  .ads{background:var(--bg2);border:1px dashed var(--border2);padding:1rem;margin-bottom:1rem;text-align:center;min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .pl{list-style:none;}
+  .pi{display:flex;gap:.7rem;padding:.7rem 0;border-bottom:1px solid var(--border);align-items:flex-start;cursor:pointer;}
+  .pi:last-child{border-bottom:none;}
+  .pn{font-family:'Share Tech Mono',monospace;font-size:1.2rem;color:var(--border2);width:1.5rem;flex-shrink:0;line-height:1;}
+  .pi:hover .pn{color:var(--accent);}
+  .pt{font-size:.78rem;line-height:1.45;color:var(--muted);}
+  .pi:hover .pt{color:var(--accent2);}
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 0;text-align:center;}
+  .fl{font-family:'Share Tech Mono',monospace;font-size:1rem;color:var(--accent2);margin-bottom:.4rem;}
+  .fc{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--faint);}
+  .fls{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1rem;}
+  .fls a{font-size:.72rem;color:var(--faint);}
+  .fls a:hover{color:var(--accent2);}
+  .disc{background:var(--bg2);border:1px solid var(--border);padding:.8rem 1rem;font-size:.72rem;color:var(--faint);margin:1.5rem 0;font-family:'Share Tech Mono',monospace;}
+  @media(max-width:780px){.layout{grid-template-columns:1fr;}nav{display:none;}.rg{grid-template-columns:1fr;}}
+</style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-382452921505359" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<header>
+  <div class="hi">
+    <a href="blog.html" style="text-decoration:none">
+      <div class="lw">
+        <div class="li">🎮</div>
+        <div><div class="lt">ぼやきログ</div><div class="ls">// BOYAKI_LOG.exe</div></div>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html">TOP</a><a href="nioh3-guide.html">ゲーム</a><a href="rant-gaming.html">愚痴</a><a href="rainy-day-gaming.html">日常</a><a href="frieren.html">アニメ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="bc"><a href="index.html">TOP</a> › <a href="nioh3-guide.html">ゲーム攻略</a> › 記事</div>
+  
+<div class="ad">
+  <span class="adl">// ADVERTISEMENT</span>
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-382452921505359"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+  <div class="layout">
+    <article>
+      <div class="cat cg">GAME / 仁王3</div>
+      <h1 class="at">【仁王3】サムライとニンジャどっちが強い？実際に両方使い込んでわかったこと</h1>
+      <div class="am">2026.03.08 &nbsp;|&nbsp; 読了約6分</div>
+      <div class="toc">
+        <div class="toc-h">// 目次</div>
+        <ol><li><a href='#intro'>正直：どっちも強い。ただし状況による</a></li><li><a href='#samurai'>サムライスタイルの特徴と強み</a></li><li><a href='#ninja'>ニンジャスタイルの特徴と強み</a></li><li><a href='#switch'>スタイル切り替えが仁王3の核心</a></li><li><a href='#verdict'>結論：最終的にどっちをメインにすべきか</a></li></ol>
+      </div>
+      <div class="ab">
+        
+<h2 id="intro">正直：どっちも強い。ただし状況による</h2>
+<p>仁王3で最初に悩むのがスタイル選択。「サムライとニンジャ、どっちが強いの？」——答えは「どっちも強いけど、場面で使い分けるゲームだよ」です。ただそれだと参考にならないので、実際に両方使い込んで気づいたことをまとめました。</p>
+
+<div class="ad">
+  <span class="adl">// ADVERTISEMENT</span>
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-382452921505359"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2 id="samurai">サムライスタイルの特徴と強み</h2>
+<p>サムライスタイルは「構え」を意識した、正統派の近接戦闘スタイル。上段・中段・下段の3構えを切り替えながら戦います。</p>
+<h3>サムライの強いところ</h3>
+<table>
+  <tr><th>特徴</th><th>詳細</th></tr>
+  <tr><td>火力が高い</td><td>特定の構えから出せる武技のダメージが高い。ボスの体力を削るならこっち</td></tr>
+  <tr><td>気力削りが得意</td><td>敵の気力を削ってダウンさせる「殴り倒し」が狙いやすい</td></tr>
+  <tr><td>防御力が高い</td><td>重装備が活きる。タフに戦いたい人向け</td></tr>
+</table>
+<h2 id="ninja">ニンジャスタイルの特徴と強み</h2>
+<p>ニンジャスタイルは回避と機動力が売り。空中技「テンショウ」が強力で、大型の妖怪には特に刺さります。</p>
+<h3>ニンジャの強いところ</h3>
+<table>
+  <tr><th>特徴</th><th>詳細</th></tr>
+  <tr><td>回避性能が高い</td><td>ステップの距離・速度が段違い。ピンチ脱出に優秀</td></tr>
+  <tr><td>テンショウが強い</td><td>空中から大ダメージを与えられる。大型ボスの頭への攻撃として有効</td></tr>
+  <tr><td>状態異常が使える</td><td>毒や麻痺などの忍術を活用できる</td></tr>
+</table>
+<div class="tip"><div class="tip-h">💡 TIPS</div>ニンジャスタイルは「忍術のコストが軽い」という隠れたメリットもあります。補助的な忍術をガンガン使えるのが地味に強い。</div>
+<h2 id="switch">スタイル切り替えが仁王3の核心</h2>
+<p>実はこれが一番大事。仁王3の設計思想として「2スタイルを状況で切り替える」ことが前提になっています。「サムライで攻める → ピンチになったらニンジャで逃げる → テンショウで追撃 → サムライに戻って仕留める」——このサイクルが完成すると、ボス戦がめちゃくちゃ楽しくなります。</p>
+<div class="warn"><div class="warn-h">⚠ 注意</div>スタイル切り替えにも気力を消費します。気力が少ない状態で切り替えると隙が生まれるので注意。</div>
+<h2 id="verdict">結論：最終的にどっちをメインにすべきか</h2>
+<p>初心者は<strong>サムライメイン</strong>がおすすめ。基本的な近接戦闘の感覚を身につけてから、ニンジャの切り替えを練習する方が上達が早いです。慣れてきたら50:50くらいの感覚でどっちも使えるようになるのが理想。</p>
+<div class="disc">※ 以下のリンクはアフィリエイトリンクです。購入いただくとブログ運営の支援になります。</div>
+
+<div class="aff">
+  <div class="affi">🎮</div>
+  <div>
+    <div class="affn">仁王3（PS5）</div>
+    <div class="affp">¥9,680</div>
+    <div class="affbs">
+      <a href="https://www.amazon.co.jp/s?k=%E4%BB%81%E7%8E%8B3&tag=caffelatte743-22" class="ab1" target="_blank" rel="noopener">Amazonで見る</a>
+      <a href="https://www.rakuten.co.jp/" class="ab2" target="_blank" rel="noopener">楽天で見る</a>
+    </div>
+    <div class="affnt">// リンクはアフィリエイトリンクです</div>
+  </div>
+</div>
+
+<div class="ad">
+  <span class="adl">// ADVERTISEMENT</span>
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-382452921505359"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+        <div class="rel"><div class="sl">// 関連記事</div><div class="rg"><a href="nioh3-guide.html" style="text-decoration:none;display:block"><div class="rc"><div class="rcat">GAME</div><div class="rt">【仁王3】序盤おすすめ武器と立ち回り完全ガイド</div></div></a><a href="nioh3-boss.html" style="text-decoration:none;display:block"><div class="rc"><div class="rcat">GAME</div><div class="rt">【仁王3】序盤ボス攻略まとめ</div></div></a><a href="rainy-day-gaming.html" style="text-decoration:none;display:block"><div class="rc"><div class="rcat">日常</div><div class="rt">雨の日ってなんであんなにゲームが捗るんだろう、という考察</div></div></a></div></div>
+      </div>
+    </article>
+    
+<aside class="sb">
+  <div class="ads">
+    <span style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--faint);display:block;margin-bottom:.5rem;">// AD</span>
+    <div style="font-size:.72rem;color:var(--muted);">📢 サイドバー広告<br><br>
+      <span style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--faint)">AdSenseコードをここに貼る</span>
+    </div>
+  </div>
+  <div class="wg">
+    <div class="wh">// 人気記事</div>
+    <ul class="pl">
+      <li class="pi"><a href="nioh3-guide.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">01</div><div class="pt">【仁王3】序盤おすすめ武器と立ち回り完全ガイド</div></a></li>
+      <li class="pi"><a href="elden-ring.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">02</div><div class="pt">エルデンリングを今さらはじめたら100時間溶けた話</div></a></li>
+      <li class="pi"><a href="rant-gaming.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">03</div><div class="pt">ゲーム中に話しかけてくる人、マジで何も考えてないの？</div></a></li>
+      <li class="pi"><a href="rant-online.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">04</div><div class="pt">オンラインゲームで「下手くそ」って言ってくる人ってどういう精神してんの</div></a></li>
+      <li class="pi"><a href="rant-wifi.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">05</div><div class="pt">深夜にWi-Fiが重くなる現象、絶対に許せない</div></a></li>
+    </ul>
+  </div>
+  <div class="ads">
+    <span style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--faint);display:block;margin-bottom:.5rem;">// AD</span>
+    <div style="font-size:.72rem;color:var(--muted);">📢 サイドバー広告２<br><br>
+      <span style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--faint)">AdSenseコードをここに貼る</span>
+    </div>
+  </div>
+  <div class="wg">
+    <div class="wh">// カテゴリー</div>
+    <a href="nioh3-guide.html" style="text-decoration:none;color:var(--muted);display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.8rem;">🎮 ゲーム攻略 <span style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint)">18</span></a>
+    <a href="rant-gaming.html" style="text-decoration:none;color:var(--muted);display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.8rem;">😤 愚痴・ぼやき <span style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint)">15</span></a>
+    <a href="rainy-day-gaming.html" style="text-decoration:none;color:var(--muted);display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.8rem;">🌿 日常の気づき <span style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint)">8</span></a>
+    <a href="frieren.html" style="text-decoration:none;color:var(--muted);display:flex;justify-content:space-between;padding:.5rem 0;font-size:.8rem;">📺 アニメ・マンガ <span style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint)">6</span></a>
+  </div>
+</aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">ぼやきログ // BOYAKI_LOG</div>
+    <div class="fls">
+      <a href="index.html">TOP</a><a href="contact.html">About</a><a href="privacy.html">プライバシーポリシー</a><a href="contact.html">お問い合わせ</a>
+    </div>
+    <div class="fc">© 2026 ぼやきログ — All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

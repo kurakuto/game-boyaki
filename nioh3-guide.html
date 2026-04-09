@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【仁王3】序盤おすすめ武器と立ち回り完全ガイド｜ぼやきログ</title>
+
+  <!-- ============================================
+    ★ Google AdSense コード ここに貼る（取得後）
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-382452921505359XXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    ↑ ca-pub-382452921505359 の部分を自分のパブリッシャーIDに変える
+  ============================================ -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0d0d10;
+      --bg2:     #13131a;
+      --bg3:     #1a1a24;
+      --border:  #252535;
+      --border2: #303048;
+      --accent:  #7c6aff;
+      --accent2: #a594ff;
+      --green:   #4ade80;
+      --red:     #f87171;
+      --yellow:  #fbbf24;
+      --cyan:    #22d3ee;
+      --text:    #ddd8f0;
+      --muted:   #7a7a9a;
+      --faint:   #44445a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; line-height: 1.85; }
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner {
+      max-width: 1060px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; height: 56px;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.7rem; }
+    .logo-icon { width: 32px; height: 32px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .logo-text { font-family: 'Share Tech Mono', monospace; font-size: 1rem; color: #fff; }
+    .logo-sub  { font-size: 0.58rem; color: var(--muted); font-family: 'Share Tech Mono', monospace; }
+    nav { display: flex; gap: 0; }
+    nav a { font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted); padding: 0.35rem 0.7rem; border: 1px solid transparent; transition: all 0.18s; }
+    nav a:hover { color: var(--accent2); border-color: var(--border2); background: var(--bg3); text-decoration: none; }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 1.5rem; }
+    .layout { display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; padding: 2rem 0 4rem; }
+
+    /* ── ARTICLE ── */
+    .article-header { padding: 2rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 0; }
+
+    .breadcrumb { font-size: 0.7rem; color: var(--faint); margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace; }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--accent2); }
+
+    .art-cat {
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em;
+      padding: 0.2rem 0.6rem; border: 1px solid rgba(124,106,255,0.4);
+      color: var(--accent2); background: rgba(124,106,255,0.08);
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .art-title {
+      font-family: 'Noto Serif JP', serif; font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700; line-height: 1.4; color: #fff; margin-bottom: 1rem;
+    }
+    .art-meta {
+      font-family: 'Share Tech Mono', monospace; font-size: 0.65rem;
+      color: var(--faint); letter-spacing: 0.08em;
+    }
+
+    /* article body */
+    .art-body { padding: 2rem 0; }
+
+    .art-body p { margin-bottom: 1.2rem; font-size: 0.92rem; }
+
+    .art-body h2 {
+      font-family: 'Noto Serif JP', serif; font-size: 1.2rem; font-weight: 700;
+      color: #fff; margin: 2.5rem 0 1rem;
+      padding: 0.7rem 1rem;
+      border-left: 4px solid var(--accent);
+      background: var(--bg2);
+    }
+
+    .art-body h3 {
+      font-size: 1rem; font-weight: 700; color: var(--accent2);
+      margin: 1.8rem 0 0.7rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border2);
+    }
+
+    /* table */
+    .art-body table {
+      width: 100%; border-collapse: collapse;
+      margin: 1.5rem 0; font-size: 0.85rem;
+    }
+    .art-body th {
+      background: var(--bg3); color: var(--accent2);
+      padding: 0.6rem 0.8rem; text-align: left;
+      border: 1px solid var(--border2);
+      font-weight: 500; font-size: 0.8rem;
+    }
+    .art-body td {
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .art-body tr:nth-child(even) td { background: var(--bg2); }
+
+    /* tip box */
+    .tip {
+      background: rgba(124,106,255,0.08);
+      border: 1px solid rgba(124,106,255,0.3);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      font-size: 0.88rem;
+    }
+    .tip-head {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.15em;
+      color: var(--accent); margin-bottom: 0.5rem;
+    }
+
+    .warn {
+      background: rgba(248,113,113,0.07);
+      border: 1px solid rgba(248,113,113,0.3);
+      border-left: 4px solid var(--red);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      font-size: 0.88rem;
+    }
+    .warn-head {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.15em;
+      color: var(--red); margin-bottom: 0.5rem;
+    }
+
+    /* ── ADSENSE PLACEHOLDER ── */
+    .ad-unit {
+      background: var(--bg2);
+      border: 1px dashed var(--border2);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+      position: relative;
+    }
+    .ad-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.15em;
+      color: var(--faint); text-transform: uppercase;
+      position: absolute; top: 0.4rem; left: 0.6rem;
+    }
+    .ad-placeholder {
+      font-size: 0.78rem; color: var(--muted);
+      padding: 1.5rem 0;
+    }
+    .ad-code-hint {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.68rem; color: var(--faint);
+      margin-top: 0.5rem;
+    }
+
+    /* Real AdSense would look like: */
+    /* <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-382452921505359" data-ad-slot="auto" data-ad-format="auto"></ins> */
+
+    /* ── AFFILIATE PRODUCT BOX ── */
+    .aff-box {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      padding: 1.2rem;
+      margin: 1.5rem 0;
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .aff-img {
+      width: 80px; height: 80px;
+      background: var(--bg3);
+      display: flex; align-items: center;
+      justify-content: center;
+      font-size: 2rem; flex-shrink: 0;
+    }
+    .aff-info { flex: 1; }
+    .aff-name { font-weight: 500; font-size: 0.88rem; color: #fff; margin-bottom: 0.3rem; }
+    .aff-price { font-family: 'Share Tech Mono', monospace; font-size: 0.75rem; color: var(--yellow); margin-bottom: 0.6rem; }
+    .aff-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .aff-btn {
+      display: inline-block;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans JP', sans-serif;
+      transition: opacity 0.2s;
+    }
+    .aff-btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-amazon { background: #ff9900; color: #111; }
+    .btn-rakuten { background: #bf0000; color: #fff; }
+    .aff-note {
+      font-size: 0.65rem; color: var(--faint);
+      margin-top: 0.4rem;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    /* ── TABLE OF CONTENTS ── */
+    .toc {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .toc-head {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.2em; color: var(--accent);
+      text-transform: uppercase; margin-bottom: 0.8rem;
+    }
+    .toc ol { padding-left: 1.3rem; }
+    .toc li { font-size: 0.82rem; margin-bottom: 0.3rem; color: var(--muted); }
+    .toc a { color: var(--muted); }
+    .toc a:hover { color: var(--accent2); }
+
+    /* ── RELATED POSTS ── */
+    .related { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .sec-label { font-family: 'Share Tech Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.2rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+    .rel-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      padding: 1rem; cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .rel-card:hover { border-color: var(--accent); }
+    .rel-cat { font-family: 'Share Tech Mono', monospace; font-size: 0.58rem; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.4rem; text-transform: uppercase; }
+    .rel-title { font-size: 0.8rem; line-height: 1.5; color: var(--text); }
+
+    /* ── SIDEBAR ── */
+    .sidebar { }
+    .widget { background: var(--bg2); border: 1px solid var(--border); padding: 1.2rem; margin-bottom: 1rem; }
+    .widget-head { font-family: 'Share Tech Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 0.7rem; margin-bottom: 1rem; }
+
+    .ad-side {
+      background: var(--bg2); border: 1px dashed var(--border2);
+      padding: 1rem; margin-bottom: 1rem; text-align: center; min-height: 260px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .ad-side .ad-label { position: static; margin-bottom: 0.5rem; display: block; }
+    .ad-side .ad-placeholder { font-size: 0.72rem; color: var(--muted); }
+
+    .toc-side ol { padding-left: 1.2rem; }
+    .toc-side li { font-size: 0.78rem; margin-bottom: 0.35rem; color: var(--muted); }
+    .toc-side a { color: var(--muted); }
+    .toc-side a:hover { color: var(--accent2); }
+
+    .popular-list { list-style: none; }
+    .pop-item { display: flex; gap: 0.7rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; cursor: pointer; }
+    .pop-item:last-child { border-bottom: none; }
+    .pop-num { font-family: 'Share Tech Mono', monospace; font-size: 1.2rem; color: var(--border2); width: 1.5rem; flex-shrink: 0; line-height: 1; }
+    .pop-item:hover .pop-num { color: var(--accent); }
+    .pop-title { font-size: 0.78rem; line-height: 1.45; color: var(--muted); }
+    .pop-item:hover .pop-title { color: var(--accent2); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; }
+    .footer-logo { font-family: 'Share Tech Mono', monospace; font-size: 1rem; color: var(--accent2); margin-bottom: 0.4rem; }
+    .footer-copy { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: var(--faint); }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+    .footer-links a { font-size: 0.72rem; color: var(--faint); }
+    .footer-links a:hover { color: var(--accent2); }
+
+    /* affiliate disclaimer */
+    .disclaimer {
+      background: var(--bg2); border: 1px solid var(--border);
+      padding: 0.8rem 1rem; font-size: 0.72rem; color: var(--faint);
+      margin: 1.5rem 0; font-family: 'Share Tech Mono', monospace;
+    }
+
+    @media (max-width: 780px) {
+      .layout { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="blog.html" style="text-decoration:none">
+      <div class="logo-wrap">
+        <div class="logo-icon">🎮</div>
+        <div>
+          <div class="logo-text">ぼやきログ</div>
+          <div class="logo-sub">// BOYAKI_LOG.exe</div>
+        </div>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html">TOP</a>
+      <a href="nioh3-guide.html">ゲーム</a>
+      <a href="rant-gaming.html">愚痴</a>
+      <a href="rainy-day-gaming.html">日常</a>
+      <a href="frieren.html">アニメ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- パンくずリスト -->
+  <div class="breadcrumb" style="padding-top:1.2rem">
+    <a href="index.html">TOP</a> &nbsp;›&nbsp;
+    <a href="nioh3-guide.html">ゲーム攻略</a> &nbsp;›&nbsp;
+    仁王3 序盤ガイド
+  </div>
+
+  <!-- ★ 記事上部 AdSense ★ -->
+  <div class="ad-unit">
+    <span class="ad-label">// ADVERTISEMENT</span>
+    <div class="ad-placeholder">
+      📢 ここにGoogleアドセンスの広告が表示されます<br>
+    </div>
+    <div class="ad-code-hint">
+      取得したAdSenseコードをここに貼り付けてください<br>
+      &lt;ins class="adsbygoogle" ... data-ad-client="ca-pub-382452921505359"&gt;&lt;/ins&gt;
+    </div>
+  </div>
+
+  <div class="layout">
+    <!-- ── MAIN ARTICLE ── -->
+    <article>
+      <div class="art-cat">GAME / 仁王3</div>
+      <h1 class="art-title">【仁王3】序盤おすすめ武器と立ち回り完全ガイド — 初心者が最初に知るべきこと全部まとめた</h1>
+      <div class="art-meta">2026.03.01 &nbsp;|&nbsp; 読了約8分 &nbsp;|&nbsp; 仁王3攻略</div>
+
+      <!-- 目次 -->
+      <div class="toc">
+        <div class="toc-head">// 目次</div>
+        <ol>
+          <li><a href="#intro">正直な話、最初は本当に死ぬ</a></li>
+          <li><a href="#weapons">おすすめ武器種まとめ</a></li>
+          <li><a href="#style">サムライ vs ニンジャ、どっち使えばいい？</a></li>
+          <li><a href="#tips">序盤で知っておくべき立ち回り3選</a></li>
+          <li><a href="#buy">ゲームソフト・周辺機器のリンク</a></li>
+        </ol>
+      </div>
+
+      <div class="art-body">
+
+        <h2 id="intro">正直な話、最初は本当に死ぬ</h2>
+        <p>仁王3を始めてまず最初に思ったこと：「難しすぎてやめようかな」。でもそれ正常です。仁王シリーズはそういうゲームです。死んで覚えるゲームなので、序盤の死亡は「授業料」だと思って割り切った方が精神的に楽です。</p>
+        <p>このガイドでは、シリーズ経験ありの視点から「これだけ知っておけば序盤は乗り越えられる」という内容をまとめました。</p>
+
+        <div class="warn">
+          <div class="warn-head">⚠ 注意</div>
+          このガイドは序盤（最初の数エリア）を対象にしています。深いやりこみやエンドコンテンツは別記事で！
+        </div>
+
+        <!-- 記事中部 AdSense -->
+        <div class="ad-unit">
+          <span class="ad-label">// ADVERTISEMENT</span>
+          <div class="ad-placeholder">📢 記事中広告（AdSense）</div>
+          <div class="ad-code-hint">
+            &lt;ins class="adsbygoogle" data-ad-format="fluid" data-ad-client="ca-pub-382452921505359" data-ad-slot="auto"&gt;&lt;/ins&gt;
+          </div>
+        </div>
+
+        <h2 id="weapons">おすすめ武器種まとめ</h2>
+        <p>仁王3には14種類の武器があります。最初は全部試せないので、まず自分のスタイルに合わせて1〜2種類に絞るのがコツです。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>武器</th>
+              <th>難易度</th>
+              <th>特徴</th>
+              <th>おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>大太刀（おだち）</td>
+              <td>★★☆</td>
+              <td>リーチ長め。装備重量が火力に直結する「硬さ」ステ型。ごり押しが効きやすい</td>
+              <td>初心者◎</td>
+            </tr>
+            <tr>
+              <td>忍刀（双刀）</td>
+              <td>★★★</td>
+              <td>ニンジャスタイルとの相性◎。回避主体の戦いが好きな人向け</td>
+              <td>慣れたら強い</td>
+            </tr>
+            <tr>
+              <td>刀</td>
+              <td>★★☆</td>
+              <td>バランス型。武技が豊富で応用が広い。迷ったらこれ</td>
+              <td>汎用性◎</td>
+            </tr>
+            <tr>
+              <td>槍</td>
+              <td>★☆☆</td>
+              <td>リーチが最長クラス。遠距離でちくちく攻撃できる。比較的楽</td>
+              <td>初心者◎</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="tip">
+          <div class="tip-head">💡 TIPS</div>
+          最初は<strong>大太刀か槍</strong>がおすすめ。リーチがある武器はボスへの安全な差し込みがしやすく、序盤の詰まりが少ないです。
+        </div>
+
+        <h2 id="style">サムライ vs ニンジャ、どっち使えばいい？</h2>
+        <p>仁王3の目玉要素である「サムライ」「ニンジャ」のスタイル切り替え。リアルタイムに切り替えられるのが最大の特徴です。</p>
+
+        <h3>サムライスタイル</h3>
+        <p>正面からどっしり戦う。気力管理が重要で、スタミナ切れに注意が必要。でも火力はこっちの方が出やすい。序盤はまずサムライスタイルで基本を覚えるのがおすすめ。</p>
+
+        <h3>ニンジャスタイル</h3>
+        <p>素早い回避が売り。「テンショウ」という空中攻撃が強力で、でかい妖怪系のボスに対して有効。慣れてきたら積極的に切り替えていこう。</p>
+
+        <div class="tip">
+          <div class="tip-head">💡 TIPS</div>
+          ボス戦では「サムライで攻め → ピンチになったらニンジャで逃げる」という切り替えが序盤の基本パターンです。
+        </div>
+
+        <h2 id="tips">序盤で知っておくべき立ち回り3選</h2>
+
+        <h3>① 守護霊召喚はボス戦前に使う</h3>
+        <p>守護霊（クジュウクオケ変身？）はボス戦直前に発動するのが基本。温存して戦闘終盤で使うより、最初から出して大ダメージを狙った方が安全です。</p>
+
+        <h3>② 死亡時は「魂」を回収しに行く価値があるかを考える</h3>
+        <p>死ぬと落とした魂の回収に行けますが、危険エリアで死んだ場合、無理に回収しに行かない判断も大事。初心者のうちは特に。魂は稼げばいい。</p>
+
+        <h3>③ 篝火（セーブポイント）を見つけたら絶対に触れる</h3>
+        <p>当たり前だけど意外に見落としがちです。特にオープンフィールド化した仁王3では、次のセーブポイントまでの距離が予想より長いこともある。こまめに触れるクセを。</p>
+
+        <!-- アフィリエイト商品ボックス -->
+        <h2 id="buy">ゲームソフト・周辺機器のリンク</h2>
+
+        <div class="disclaimer">
+          ※ 以下のリンクはアフィリエイトリンクです。購入いただくと、ブログ運営の支援になります。
+        </div>
+
+        <!-- 仁王3 ソフト -->
+        <div class="aff-box">
+          <div class="aff-img">🎮</div>
+          <div class="aff-info">
+            <div class="aff-name">仁王3（通常版）PS5</div>
+            <div class="aff-price">¥9,680（税込）</div>
+            <div class="aff-btns">
+              <!-- ★ Amazonアソシエイト: hrefのURLを自分のアフィリエイトリンクに変える ★ -->
+              <a href="https://www.amazon.co.jp/s?k=%E4%BB%81%E7%8E%8B3&tag=caffelatte743-22" class="aff-btn btn-amazon" target="_blank" rel="noopener">Amazonで見る</a>
+              <!-- ★ 楽天アフィリエイト: hrefのURLを自分のアフィリエイトリンクに変える ★ -->
+              <a href="https://search.rakuten.co.jp/search/mall/%E4%BB%81%E7%8E%8B3+PS5/" class="aff-btn btn-rakuten" target="_blank" rel="noopener">楽天で見る</a>
+            </div>
+            <div class="aff-note">// リンクはアフィリエイトリンクです</div>
+          </div>
+        </div>
+
+        <!-- コントローラー -->
+        <div class="aff-box">
+          <div class="aff-img">🕹️</div>
+          <div class="aff-info">
+            <div class="aff-name">DualSense ワイヤレスコントローラー（ミッドナイトブラック）</div>
+            <div class="aff-price">¥7,678（税込）</div>
+            <div class="aff-btns">
+              <a href="https://www.amazon.co.jp/s?k=DualSense+%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC&tag=caffelatte743-22" class="aff-btn btn-amazon" target="_blank" rel="noopener">Amazonで見る</a>
+              <a href="https://search.rakuten.co.jp/search/mall/DualSense+%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC/" class="aff-btn btn-rakuten" target="_blank" rel="noopener">楽天で見る</a>
+            </div>
+            <div class="aff-note">// リンクはアフィリエイトリンクです</div>
+          </div>
+        </div>
+
+        <!-- ゲーミングヘッドセット -->
+        <div class="aff-box">
+          <div class="aff-img">🎧</div>
+          <div class="aff-info">
+            <div class="aff-name">PULSE 3D ワイヤレスヘッドセット PS5対応</div>
+            <div class="aff-price">¥9,980（税込）</div>
+            <div class="aff-btns">
+              <a href="https://www.amazon.co.jp/s?k=PULSE+3D+%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%83%98%E3%83%83%E3%83%89%E3%82%BB%E3%83%83%E3%83%88+PS5&tag=caffelatte743-22" class="aff-btn btn-amazon" target="_blank" rel="noopener">Amazonで見る</a>
+              <a href="https://search.rakuten.co.jp/search/mall/PULSE+3D+%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%83%98%E3%83%83%E3%83%89%E3%82%BB%E3%83%83%E3%83%88+PS5/" class="aff-btn btn-rakuten" target="_blank" rel="noopener">楽天で見る</a>
+            </div>
+            <div class="aff-note">// リンクはアフィリエイトリンクです</div>
+          </div>
+        </div>
+
+        <!-- 記事下部 AdSense -->
+        <div class="ad-unit">
+          <span class="ad-label">// ADVERTISEMENT</span>
+          <div class="ad-placeholder">📢 記事下部広告（AdSense）</div>
+          <div class="ad-code-hint">
+            &lt;ins class="adsbygoogle" data-ad-format="auto" data-ad-client="ca-pub-382452921505359" data-ad-slot="auto"&gt;&lt;/ins&gt;
+          </div>
+        </div>
+
+        <!-- 関連記事 -->
+        <div class="related">
+          <div class="sec-label">// 関連記事</div>
+          <div class="related-grid">
+            <div class="rel-card">
+              <div class="rel-cat">GAME</div>
+              <div class="rel-title">【仁王3】最強ビルド構成まとめ — 中盤以降はこれで乗り越えた</div>
+            </div>
+            <div class="rel-card">
+              <div class="rel-cat">GAME</div>
+              <div class="rel-title">エルデンリングを今さらはじめたら100時間溶けた話</div>
+            </div>
+            <div class="rel-card">
+              <div class="rel-cat">愚痴</div>
+              <div class="rel-title">ゲーム中に話しかけてくる人、マジで何も考えてないの？</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /art-body -->
+    </article>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+
+      <!-- サイドバー AdSense -->
+      <div class="ad-side">
+        <span class="ad-label">// AD</span>
+        <div class="ad-placeholder">
+          📢 サイドバー広告<br><br>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;color:var(--faint)">
+            AdSenseコードをここに貼る<br>
+            data-ad-slot="auto"
+          </span>
+        </div>
+      </div>
+
+      <!-- 目次（サイドバー版） -->
+      <div class="widget toc-side">
+        <div class="widget-head">// 目次</div>
+        <ol>
+          <li><a href="#intro">正直な話、最初は本当に死ぬ</a></li>
+          <li><a href="#weapons">おすすめ武器種まとめ</a></li>
+          <li><a href="#style">サムライ vs ニンジャ</a></li>
+          <li><a href="#tips">立ち回り3選</a></li>
+          <li><a href="#buy">ソフト・周辺機器</a></li>
+        </ol>
+      </div>
+
+      <!-- 人気記事 -->
+      <div class="widget">
+        <div class="widget-head">// 人気記事</div>
+        <ul class="popular-list">
+          <li class="pop-item">
+            <div class="pop-num">01</div>
+            <div class="pop-title">【仁王3】序盤おすすめ武器と立ち回り完全ガイド</div>
+          </li>
+          <li class="pop-item">
+            <div class="pop-num">02</div>
+            <div class="pop-title">エルデンリングを今さらはじめたら100時間溶けた話</div>
+          </li>
+          <li class="pop-item">
+            <div class="pop-num">03</div>
+            <div class="pop-title">ゲーム中に話しかけてくる人、マジで何も考えてないの？</div>
+          </li>
+          <li class="pop-item">
+            <div class="pop-num">04</div>
+            <div class="pop-title">トロコン達成したら謎の虚無感に襲われた</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- サイドバー AdSense 2 -->
+      <div class="ad-side">
+        <span class="ad-label">// AD</span>
+        <div class="ad-placeholder">
+          📢 サイドバー広告２<br><br>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;color:var(--faint)">
+            AdSenseコードをここに貼る
+          </span>
+        </div>
+      </div>
+
+    </aside>
+  </div><!-- /layout -->
+</div><!-- /wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-logo">ぼやきログ // BOYAKI_LOG</div>
+    <div class="footer-links">
+      <a href="index.html">TOP</a>
+      <a href="contact.html">About</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <div class="footer-copy">© 2026 ぼやきログ — All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
