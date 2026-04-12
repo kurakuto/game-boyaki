@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【仁王3】メインストーリー完全攻略チャート｜全18ミッション・ボス攻略まとめ｜ぼやきログ</title>
+  <meta name="google-adsense-account" content="ca-pub-382452921505359">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-382452921505359" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0d0d10;
+      --bg2:     #13131a;
+      --bg3:     #1a1a24;
+      --border:  #252535;
+      --border2: #303048;
+      --accent:  #7c6aff;
+      --accent2: #a594ff;
+      --green:   #4ade80;
+      --red:     #f87171;
+      --yellow:  #fbbf24;
+      --cyan:    #22d3ee;
+      --text:    #ddd8f0;
+      --muted:   #7a7a9a;
+      --faint:   #44445a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; line-height: 1.85; }
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner {
+      max-width: 1060px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; height: 56px;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.7rem; }
+    .logo-icon { width: 32px; height: 32px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .logo-text { font-family: 'Share Tech Mono', monospace; font-size: 1rem; color: #fff; }
+    .logo-sub  { font-size: 0.58rem; color: var(--muted); font-family: 'Share Tech Mono', monospace; }
+    nav { display: flex; gap: 0; }
+    nav a { font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted); padding: 0.35rem 0.7rem; border: 1px solid transparent; transition: all 0.18s; }
+    nav a:hover { color: var(--accent2); border-color: var(--border2); background: var(--bg3); text-decoration: none; }
+    .online-badge { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: var(--green); border: 1px solid var(--green); padding: 0.2rem 0.5rem; display: flex; align-items: center; gap: 0.3rem; }
+    .online-dot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; animation: blink 1.4s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 1.5rem; }
+    .layout { display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; padding: 2rem 0 4rem; }
+
+    .breadcrumb { font-size: 0.7rem; color: var(--faint); margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace; }
+    .breadcrumb a { color: var(--muted); }
+
+    .art-cat {
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em;
+      padding: 0.2rem 0.6rem; border: 1px solid rgba(124,106,255,0.4);
+      color: var(--accent2); background: rgba(124,106,255,0.08);
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .art-title {
+      font-family: 'Noto Serif JP', serif; font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700; line-height: 1.4; color: #fff; margin-bottom: 1rem;
+    }
+    .art-meta {
+      font-family: 'Share Tech Mono', monospace; font-size: 0.65rem;
+      color: var(--faint); letter-spacing: 0.08em;
+    }
+    .art-meta span { margin-right: 1.2rem; }
+
+    .article-body { padding-top: 2rem; }
+    .article-body h2 {
+      font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 700;
+      color: #fff; margin: 2.5rem 0 1rem;
+      padding-left: 0.8rem; border-left: 3px solid var(--accent);
+    }
+    .article-body h3 {
+      font-size: 1rem; font-weight: 500; color: var(--accent2);
+      margin: 1.8rem 0 0.8rem;
+    }
+    .article-body p { margin-bottom: 1rem; color: var(--text); }
+    .article-body ul, .article-body ol { margin: 0.8rem 0 1rem 1.5rem; }
+    .article-body li { margin-bottom: 0.4rem; }
+
+    /* ── 画像プレースホルダー ── */
+    .img-block {
+      margin: 1.5rem 0;
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .img-placeholder {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--faint);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%);
+    }
+    .img-placeholder .img-icon { font-size: 2rem; opacity: 0.4; }
+    .img-caption {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.68rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    /* ── ミッションカード ── */
+    .mission-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0 1.5rem;
+      position: relative;
+    }
+    .mission-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      border-radius: 4px 0 0 4px;
+    }
+    .mission-num {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--accent2);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+    }
+    .mission-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .mission-boss {
+      font-size: 0.75rem;
+      color: var(--red);
+      font-family: 'Share Tech Mono', monospace;
+      margin-bottom: 0.6rem;
+    }
+    .mission-tip {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── 時代バナー ── */
+    .era-banner {
+      background: linear-gradient(135deg, rgba(124,106,255,0.12) 0%, rgba(34,211,238,0.06) 100%);
+      border: 1px solid rgba(124,106,255,0.3);
+      border-radius: 4px;
+      padding: 1rem 1.4rem;
+      margin: 2rem 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .era-icon { font-size: 1.8rem; }
+    .era-label { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: var(--accent2); margin-bottom: 0.2rem; }
+    .era-title { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .era-desc { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+
+    /* ── 攻略ポイント ── */
+    .tip-box {
+      background: rgba(251,191,36,0.06);
+      border: 1px solid rgba(251,191,36,0.3);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+    }
+    .tip-box-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--yellow);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .tip-box p { font-size: 0.85rem; color: var(--text); margin: 0; }
+
+    /* ── 警告ボックス ── */
+    .warn-box {
+      background: rgba(248,113,113,0.06);
+      border: 1px solid rgba(248,113,113,0.3);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+    }
+    .warn-box-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--red);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .warn-box p { font-size: 0.85rem; color: var(--text); margin: 0; }
+
+    /* ── 分岐ボックス ── */
+    .branch-box {
+      background: rgba(34,211,238,0.06);
+      border: 1px solid rgba(34,211,238,0.3);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+    }
+    .branch-box-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--cyan);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .branch-box p { font-size: 0.85rem; color: var(--text); margin: 0; }
+
+    /* ── ミッション数バッジ ── */
+    .mission-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      border: 1px solid var(--border2);
+      padding: 0.2rem 0.6rem;
+      margin-left: 0.5rem;
+    }
+
+    /* ── アフィリエイト ── */
+    .affiliate-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.2rem;
+      margin: 2rem 0;
+    }
+    .affiliate-box-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.8rem;
+    }
+    .affiliate-item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin-bottom: 0.6rem;
+      text-decoration: none;
+      transition: border-color 0.18s;
+    }
+    .affiliate-item:hover { border-color: var(--accent); text-decoration: none; }
+    .affiliate-thumb {
+      width: 60px;
+      height: 60px;
+      background: var(--bg3);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .affiliate-info { flex: 1; }
+    .affiliate-name { font-size: 0.82rem; color: #fff; margin-bottom: 0.2rem; }
+    .affiliate-store { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: var(--accent2); }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .toc-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent2);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.8rem;
+    }
+    .toc ol { margin-left: 1.2rem; }
+    .toc li { font-size: 0.82rem; margin-bottom: 0.3rem; }
+    .toc a { color: var(--muted); }
+    .toc a:hover { color: var(--accent2); }
+
+    /* ── サイドバー ── */
+    .sidebar { }
+    .sidebar-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--accent2);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-list { list-style: none; }
+    .sidebar-list li {
+      font-size: 0.8rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .sidebar-list li:last-child { border-bottom: none; }
+    .sidebar-list a { color: var(--muted); font-size: 0.78rem; }
+    .sidebar-list a:hover { color: var(--accent2); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+    .footer-inner {
+      max-width: 1060px; margin: 0 auto; padding: 0 1.5rem;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--faint);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: var(--faint); }
+
+    /* ── 進捗バー ── */
+    .progress-bar-wrap {
+      margin: 0.5rem 0 1rem;
+    }
+    .progress-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .progress-bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--cyan));
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      nav { display: none; }
+      .era-banner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo-wrap" style="text-decoration:none">
+      <div class="logo-icon">🎮</div>
+      <div>
+        <div class="logo-text">ぼやきログ</div>
+        <div class="logo-sub">// BOYAKI_LOG.exe</div>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html">TOP</a>
+      <a href="nioh3-guide.html">ゲーム</a>
+      <a href="rant-gaming.html">愚痴</a>
+      <a href="rainy-day-gaming.html">日常</a>
+      <a href="frieren.html">アニメ</a>
+    </nav>
+    <div class="online-badge"><div class="online-dot"></div>ONLINE</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="article-header" style="padding: 2rem 0 1.5rem; border-bottom: 1px solid var(--border);">
+    <div class="breadcrumb">
+      <a href="index.html">TOP</a> &gt; <a href="nioh3-guide.html">ゲーム</a> &gt; 仁王3 ストーリー攻略
+    </div>
+    <div class="art-cat">GAME / 仁王3 / 攻略</div>
+    <h1 class="art-title">【仁王3】メインストーリー完全攻略チャート<br>全18ミッション・時代別ボス攻略まとめ</h1>
+    <div class="art-meta">
+      <span>2026.03.15</span>
+      <span>📖 読了目安 15分</span>
+      <span>🎮 仁王3</span>
+    </div>
+  </div>
+
+  <div class="layout">
+    <main>
+      <!-- 目次 -->
+      <div class="toc">
+        <div class="toc-title">// TABLE OF CONTENTS</div>
+        <ol>
+          <li><a href="#overview">ストーリー概要と全体の流れ</a></li>
+          <li><a href="#prologue">プロローグ</a></li>
+          <li><a href="#sengoku">戦国篇（全5ミッション）</a></li>
+          <li><a href="#heian">平安篇（全5ミッション）</a></li>
+          <li><a href="#kodai">古代篇（全2ミッション）</a></li>
+          <li><a href="#kikan">帰還</a></li>
+          <li><a href="#bakumatsu">幕末篇（全3ミッション）</a></li>
+          <li><a href="#kessen">決戦（最終ミッション）</a></li>
+          <li><a href="#ending">エンディング分岐について</a></li>
+          <li><a href="#buy">おすすめ攻略グッズ</a></li>
+        </ol>
+      </div>
+
+      <div class="article-body">
+
+        <!-- ストーリー概要 -->
+        <h2 id="overview">ストーリー概要と全体の流れ</h2>
+        <p>仁王3のメインストーリーは全部で<strong>18ミッション</strong>構成。プロローグに始まり、戦国・平安・古代・幕末と複数の時代を飛び越えながら物語が進む、シリーズ最大規模のボリュームを誇る作品だ。</p>
+
+        <div class="img-block">
+          <div class="img-placeholder">
+            <div class="img-icon">🗾</div>
+            <div>// ストーリー全体マップ（スクショ差し替え予定）</div>
+          </div>
+          <div class="img-caption">▲ 時代をまたぐストーリーの全体像</div>
+        </div>
+
+        <p>主人公は国松と行動をともにし、妖（あやかし）と人間の境界線が崩れかけた世界を駆け抜ける。柳生宗矩をはじめとする歴史上の人物たちが個性的な敵・味方として登場し、単なる「妖退治」にとどまらない深いドラマが展開される。</p>
+
+        <div class="tip-box">
+          <div class="tip-box-title">// POINT — 真エンドを目指すなら</div>
+          <p>「国松選択」の分岐がエンディングを左右する。真エンドを見たい場合は、幕末篇の<strong>沖田奇譚</strong>をクリアしてから進むのがポイント。詳しくは<a href="#ending">エンディング分岐</a>セクションで解説。</p>
+        </div>
+
+        <h3>全体の進行順（時代）</h3>
+        <ol>
+          <li>プロローグ × 1ミッション</li>
+          <li>戦国篇 × 5ミッション</li>
+          <li>平安篇 × 5ミッション</li>
+          <li>古代篇 × 2ミッション</li>
+          <li>帰還 × 1ミッション</li>
+          <li>幕末篇 × 3ミッション</li>
+          <li>決戦 × 1ミッション</li>
+        </ol>
+
+        <!-- プロローグ -->
+        <h2 id="prologue">プロローグ</h2>
+
+        <div class="era-banner">
+          <div class="era-icon">⛩️</div>
+          <div>
+            <div class="era-label">// ERA: PROLOGUE</div>
+            <div class="era-title">始まりの地</div>
+            <div class="era-desc">キャラクリ完了後、道場へ。宗矩と対面する導入パート。</div>
+          </div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 01</div>
+          <div class="mission-name">始まりの道場</div>
+          <div class="mission-boss">⚔️ ボス：なし（チュートリアル）</div>
+          <div class="mission-tip">キャラクターを作成したら国松に続いて道場へ向かい、<strong>柳生宗矩</strong>と会話する。ここでゲームの基本操作と構えシステムを習得できる。急がずにしっかり動き方を体に馴染ませよう。</div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-box-title">// TIP — 序盤の立ち回り</div>
+          <p>構えは「上段・中段・下段」の三種類。序盤は<strong>中段</strong>がバランス良くおすすめ。気力管理を意識しながら戦うのが仁王3の基本。</p>
+        </div>
+
+        <div class="img-block">
+          <div class="img-placeholder">
+            <div class="img-icon">🥋</div>
+            <div>// プロローグ：道場シーン（スクショ差し替え予定）</div>
+          </div>
+          <div class="img-caption">▲ 宗矩との邂逅。ここから壮大な旅が始まる</div>
+        </div>
+
+        <!-- 戦国篇 -->
+        <h2 id="sengoku">戦国篇（全5ミッション）<span class="mission-count">5 MISSIONS</span></h2>
+
+        <div class="era-banner">
+          <div class="era-icon">⚔️</div>
+          <div>
+            <div class="era-label">// ERA: 戦国</div>
+            <div class="era-title">乱世の戦場</div>
+            <div class="era-desc">安土桃山の世。妖が跋扈する戦場を駆け抜ける最初の本編パート。</div>
+          </div>
+        </div>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-label"><span>進捗</span><span>2/18</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 11%"></div></div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 02</div>
+          <div class="mission-name">妖刀の噂</div>
+          <div class="mission-boss">⚔️ ボス：妖刀使い（中ボス級）</div>
+          <div class="mission-tip">戦国篇の入口。まず城下町の周辺を探索し、妖の気配を追う。ボスは<strong>弾き（はじき）</strong>のタイミングが重要。無理に攻め込まず、気力を切らせてから追撃するのが基本。</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 03</div>
+          <div class="mission-name">鬼哭の城</div>
+          <div class="mission-boss">⚔️ ボス：鬼将（戦国武将型）</div>
+          <div class="mission-tip">城内を進む探索型ミッション。分岐路が多いので<strong>祠（ほこら）</strong>を見つけたら必ず立ち寄ること。ボスは複数形態アリ。第一形態は正面から、第二形態は側面への回り込みが有効。</div>
+        </div>
+
+        <div class="img-block">
+          <div class="img-placeholder">
+            <div class="img-icon">🏯</div>
+            <div>// 戦国篇：城内探索（スクショ差し替え予定）</div>
+          </div>
+          <div class="img-caption">▲ 鬼哭の城。道に迷いやすいので祠の位置を覚えておこう</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 04</div>
+          <div class="mission-name">血染めの野</div>
+          <div class="mission-boss">⚔️ ボス：大妖（巨人型）</div>
+          <div class="mission-tip">開けたフィールドでの戦い。ボスは巨体ゆえ攻撃が大きいが、<strong>足元への攻撃</strong>が効果的。スタミナ（気力）を回復させながら戦う長期戦になる。</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 05</div>
+          <div class="mission-name">乱世の終焉</div>
+          <div class="mission-boss">⚔️ ボス：国松の宿敵（人型ボス）</div>
+          <div class="mission-tip">国松の過去に迫る重要な物語ミッション。ボスは高速移動が特徴的で、<strong>見切り（カウンター）</strong>を決めると大ダメージを狙える。</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 06</div>
+          <div class="mission-name">鬼神降臨</div>
+          <div class="mission-boss">⚔️ ボス：鬼神（戦国篇ラスボス）</div>
+          <div class="mission-tip">戦国篇の締め。ボスは<strong>3形態</strong>あり、最終形態では属性攻撃（炎・雷）が激化する。属性耐性の高い防具を装備してから挑もう。</div>
+        </div>
+
+        <div class="warn-box">
+          <div class="warn-box-title">// CAUTION — 戦国篇ラスボス</div>
+          <p>鬼神の第三形態は全攻撃に炎属性が付与される。<strong>炎耐性の守護霊か防具</strong>を用意しておくと格段に楽になる。無対策だと即死級のダメージを受けることも。</p>
+        </div>
+
+        <!-- 平安篇 -->
+        <h2 id="heian">平安篇（全5ミッション）<span class="mission-count">5 MISSIONS</span></h2>
+
+        <div class="era-banner">
+          <div class="era-icon">🌸</div>
+          <div>
+            <div class="era-label">// ERA: 平安</div>
+            <div class="era-title">雅と妖の都</div>
+            <div class="era-desc">時代が跳ぶ。平安の都、陰陽師たちが妖と戦う世界へ。</div>
+          </div>
+        </div>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-label"><span>進捗</span><span>7/18</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 39%"></div></div>
+        </div>
+
+        <p>平安篇に突入すると世界観が一変。陰陽師や式神を使う敵が増え、属性攻撃への対策がより重要になる。ここから<strong>式神システム</strong>が本格的に活用できるようになる。</p>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 07</div>
+          <div class="mission-name">鬼の棲む都</div>
+          <div class="mission-boss">⚔️ ボス：都の鬼将</div>
+          <div class="mission-tip">平安の都を舞台にした探索ミッション。入り組んだ路地が多い。<strong>遠距離攻撃</strong>を使う陰陽師型の敵が増えるので、壁を盾にしながら接近する立ち回りが有効。</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 08</div>
+          <div class="mission-name">式神の森</div>
+          <div class="mission-boss">⚔️ ボス：上位式神</div>
+          <div class="mission-tip">森の中に展開するステージ。妖の気配が強く、エリア全体に毒の霧が漂う箇所がある。<strong>毒耐性か解毒丹</strong>を多めに持っていくこと。</div>
+        </div>
+
+        <div class="img-block">
+          <div class="img-placeholder">
+            <div class="img-icon">🌙</div>
+            <div>// 平安篇：夜の都（スクショ差し替え予定）</div>
+          </div>
+          <div class="img-caption">▲ 月明かりに照らされた平安の都。雰囲気は最高だが敵も強い</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 09</div>
+          <div class="mission-name">陰陽の裂け目</div>
+          <div class="mission-boss">⚔️ ボス：陰陽師・上位</div>
+          <div class="mission-tip">時代の裂け目が発生するギミックが登場。特定のエリアでは敵が強化される「妖の領域」が展開される。領域に長居せず、素早くボスを倒すのが攻略の鍵。</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 10</div>
+          <div class="mission-name">宿命の相克</div>
+          <div class="mission-boss">⚔️ ボス：宿命の敵（人型）</div>
+          <div class="mission-tip">物語の核心に触れる重要ミッション。ボスは主人公と同じ構えシステムを使ってくる強敵。<strong>弾きと見切り</strong>を積極的に活用して主導権を握ること。</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 11</div>
+          <div class="mission-name">天地の鬼神</div>
+          <div class="mission-boss">⚔️ ボス：天地鬼神（平安篇ラスボス）</div>
+          <div class="mission-tip">平安篇の集大成。ボスは空中攻撃と地上攻撃を組み合わせてくる難敵。<strong>雷属性攻撃</strong>に注意しながら、地面に落ちてきた瞬間を狙って一気に攻め込むパターンが有効。</div>
+        </div>
+
+        <!-- 古代篇 -->
+        <h2 id="kodai">古代篇（全2ミッション）<span class="mission-count">2 MISSIONS</span></h2>
+
+        <div class="era-banner">
+          <div class="era-icon">🏛️</div>
+          <div>
+            <div class="era-label">// ERA: 古代</div>
+            <div class="era-title">神話と妖の原点</div>
+            <div class="era-desc">日本の神話時代。妖の起源に迫る謎多きパート。</div>
+          </div>
+        </div>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-label"><span>進捗</span><span>12/18</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 67%"></div></div>
+        </div>
+
+        <p>古代篇はミッション数こそ少ないが、ストーリーの核心が明かされる非常に重要なパート。妖が生まれた起源と、主人公の出自に関わる衝撃的な真実が語られる。</p>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 12</div>
+          <div class="mission-name">神代の祭壇</div>
+          <div class="mission-boss">⚔️ ボス：古代の大妖</div>
+          <div class="mission-tip">雰囲気が一気に変わり、神話的な空間を探索するミッション。これまでの常識が通じない特殊なボスが登場する。<strong>弱点属性を見極める</strong>のが最優先。</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 13</div>
+          <div class="mission-name">始原の鬼</div>
+          <div class="mission-boss">⚔️ ボス：始原の鬼（古代篇ラスボス）</div>
+          <div class="mission-tip">古代篇のラスボスは仁王3屈指の難ボス。攻撃パターンが多彩で、すべての属性攻撃を使ってくる。<strong>最高レアリティの防具</strong>と守護霊を揃えてから挑みたい。</div>
+        </div>
+
+        <div class="warn-box">
+          <div class="warn-box-title">// CAUTION — 古代篇ラスボスへの備え</div>
+          <p>始原の鬼は全属性攻撃を使う。バランス型の耐性を持つ防具セットで挑むか、体力盛りのビルドで強引に突破するのが現実的。気力消費が激しいため、<strong>気力回復速度</strong>の高い装備も重要。</p>
+        </div>
+
+        <!-- 帰還 -->
+        <h2 id="kikan">帰還<span class="mission-count">1 MISSION</span></h2>
+
+        <div class="era-banner">
+          <div class="era-icon">🌅</div>
+          <div>
+            <div class="era-label">// ERA: 帰還</div>
+            <div class="era-title">現代への回帰</div>
+            <div class="era-desc">時代をまたいだ旅の後、主人公が戻る場所とは。</div>
+          </div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 14</div>
+          <div class="mission-name">帰還の地</div>
+          <div class="mission-boss">⚔️ ボス：なし（ストーリー重視）</div>
+          <div class="mission-tip">戦闘よりストーリーが主体のミッション。ここで国松との関係が大きく動く。<strong>エンディング分岐に直接関わる選択</strong>が発生するため、集中してムービーを見ること。</div>
+        </div>
+
+        <div class="branch-box">
+          <div class="branch-box-title">// BRANCH — ここが分岐点</div>
+          <p>帰還ミッションでの国松への対応が、その後の展開とエンディングに影響する。真エンドを狙う場合、ここまでに沖田奇譚をクリア済みにしておく必要がある。</p>
+        </div>
+
+        <!-- 幕末篇 -->
+        <h2 id="bakumatsu">幕末篇（全3ミッション）<span class="mission-count">3 MISSIONS</span></h2>
+
+        <div class="era-banner">
+          <div class="era-icon">🗡️</div>
+          <div>
+            <div class="era-label">// ERA: 幕末</div>
+            <div class="era-title">動乱と剣客の時代</div>
+            <div class="era-desc">幕末の志士たちが登場。沖田総司をはじめとする剣客との戦い。</div>
+          </div>
+        </div>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-label"><span>進捗</span><span>15/18</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 83%"></div></div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 15</div>
+          <div class="mission-name">沖田奇譚</div>
+          <div class="mission-boss">⚔️ ボス：沖田総司（妖化）</div>
+          <div class="mission-tip">真エンドへの重要ミッション。沖田総司が妖の力に侵された姿で登場する。非常に高速な突きが特徴的で、<strong>見切りのタイミング</strong>が非常にシビア。焦らず連続突きのパターンを覚えよう。</div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-box-title">// TIP — 沖田総司の攻略</div>
+          <p>沖田の必殺「三段突き」は3回目の突きだけを弾くと大きな隙を作れる。最初の2発はガードで受けて3発目に弾き、そこから一気に攻め込む。習得するまで練習あるのみ。</p>
+        </div>
+
+        <div class="img-block">
+          <div class="img-placeholder">
+            <div class="img-icon">⚔️</div>
+            <div>// 沖田総司戦（スクショ差し替え予定）</div>
+          </div>
+          <div class="img-caption">▲ 妖化した沖田との激闘。スピードに惑わされないのが鍵</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 16</div>
+          <div class="mission-name">動乱の剣</div>
+          <div class="mission-boss">⚔️ ボス：幕末の剣鬼</div>
+          <div class="mission-tip">幕末の街並みを舞台にした爽快感あるミッション。複数の中ボスが連続で出現するため、消耗を抑えた立ち回りが求められる。各中ボスを倒した後に短いリペアタイムがあるので活用しよう。</div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 17</div>
+          <div class="mission-name">幕末の鬼神</div>
+          <div class="mission-boss">⚔️ ボス：幕末篇ラスボス（2形態）</div>
+          <div class="mission-tip">幕末篇の締めは2形態ボス。第一形態は剣術特化の人型、第二形態は妖化した巨大形態に変貌する。形態移行時に一定時間隙ができるので、<strong>溜め攻撃や奥義で大ダメージ</strong>を狙うチャンス。</div>
+        </div>
+
+        <!-- 決戦 -->
+        <h2 id="kessen">決戦（最終ミッション）<span class="mission-count">1 MISSION</span></h2>
+
+        <div class="era-banner">
+          <div class="era-icon">🔥</div>
+          <div>
+            <div class="era-label">// ERA: 決戦</div>
+            <div class="era-title">すべての決着</div>
+            <div class="era-desc">時代を超えた戦いの最終局面。ラスボスと運命の対決。</div>
+          </div>
+        </div>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-label"><span>進捗</span><span>18/18</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-num">// MISSION 18 — FINAL</div>
+          <div class="mission-name">決戦・時代の覇者</div>
+          <div class="mission-boss">⚔️ ボス：最終ボス（3形態）</div>
+          <div class="mission-tip">仁王3の真のラスボス。全武器種・全属性に対応した攻撃を繰り出す強大な存在。3形態制で、それぞれ攻撃パターンが大きく変わる。<strong>回復薬を最大まで補充</strong>してから挑むのが鉄則。</div>
+        </div>
+
+        <div class="warn-box">
+          <div class="warn-box-title">// CAUTION — 最終ボスへの準備</div>
+          <p>ラスボスは非常に手強い。装備レベルを十分に上げ、強い守護霊と揃え効果のある防具セットで挑もう。どうしても勝てない場合は、一度幕末篇のミッションに戻って装備を整えるのが現実的。</p>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-box-title">// TIP — 最終ボス第三形態</div>
+          <p>第三形態は全ての時代の敵の技を使ってくる。落ち着いてパターンを見極め、無理な攻撃は控えて<strong>弾き・見切りを軸</strong>に戦うのがおすすめ。焦りが一番の敵。</p>
+        </div>
+
+        <div class="img-block">
+          <div class="img-placeholder">
+            <div class="img-icon">🏆</div>
+            <div>// ラスボス戦（スクショ差し替え予定）</div>
+          </div>
+          <div class="img-caption">▲ すべての戦いの集大成。ここまで来た感動は格別</div>
+        </div>
+
+        <!-- エンディング分岐 -->
+        <h2 id="ending">エンディング分岐について</h2>
+
+        <p>仁王3には<strong>通常エンドと真エンド</strong>の2種類のエンディングが存在する。分岐条件は主に2つ。</p>
+
+        <div class="branch-box">
+          <div class="branch-box-title">// BRANCH CONDITIONS — 真エンドの条件</div>
+          <p>
+            ① 幕末篇の<strong>「沖田奇譚」をクリア済み</strong>であること<br>
+            ② 帰還ミッションでの<strong>「国松選択」で正しい選択肢</strong>を選ぶこと<br><br>
+            どちらか一方でも欠けると通常エンドになる。初見で真エンドを目指すなら、沖田奇譚を先に攻略してから帰還ミッションに進もう。
+          </p>
+        </div>
+
+        <p>真エンドでは通常エンドでは語られない物語の真相が明かされ、国松の本当の姿と主人公の出自が明確に描かれる。ぜひ両方のエンディングを体験してほしい。</p>
+
+        <!-- アフィリエイト -->
+        <h2 id="buy">攻略に役立つアイテム</h2>
+
+        <div class="affiliate-box">
+          <div class="affiliate-box-title">// 関連商品</div>
+
+          <a class="affiliate-item" href="https://www.amazon.co.jp/s?k=%E4%BB%81%E7%8E%8B3&tag=caffelatte743-22" target="_blank" rel="noopener">
+            <div class="affiliate-thumb">🎮</div>
+            <div class="affiliate-info">
+              <div class="affiliate-name">仁王3（Amazon）</div>
+              <div class="affiliate-store">amazon.co.jp →</div>
+            </div>
+          </a>
+
+          <a class="affiliate-item" href="https://www.amazon.co.jp/s?k=PS5+DualSense&tag=caffelatte743-22" target="_blank" rel="noopener">
+            <div class="affiliate-thumb">🕹️</div>
+            <div class="affiliate-info">
+              <div class="affiliate-name">DualSense ワイヤレスコントローラー（Amazon）</div>
+              <div class="affiliate-store">amazon.co.jp →</div>
+            </div>
+          </a>
+
+          <a class="affiliate-item" href="https://www.amazon.co.jp/s?k=%E3%82%B2%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%98%E3%83%83%E3%83%89%E3%82%BB%E3%83%83%E3%83%88&tag=caffelatte743-22" target="_blank" rel="noopener">
+            <div class="affiliate-thumb">🎧</div>
+            <div class="affiliate-info">
+              <div class="affiliate-name">ゲーミングヘッドセット（Amazon）</div>
+              <div class="affiliate-store">amazon.co.jp →</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- まとめ -->
+        <h2>まとめ</h2>
+        <p>仁王3のメインストーリーは全18ミッションと大ボリューム。戦国・平安・古代・幕末と時代を飛び越えながら展開する物語は、シリーズ最高峰と言っていい出来栄えだ。</p>
+        <p>真エンドを目指すなら<strong>沖田奇譚クリア→帰還ミッションの国松選択</strong>の流れを忘れずに。ラスボス前の装備準備も怠らないようにしよう。</p>
+        <p>個人的に一番しんどかったのは古代篇ラスボス。あそこで3時間溶かした。同士よ、頑張れ。</p>
+
+        <div class="tip-box">
+          <div class="tip-box-title">// 関連記事</div>
+          <p>
+            → <a href="nioh3-guide.html">【仁王3】序盤おすすめ武器と立ち回り完全ガイド</a><br>
+            → <a href="nioh3-boss.html">【仁王3】ボス攻略まとめ</a><br>
+            → <a href="nioh3-build.html">【仁王3】最強ビルド紹介</a>
+          </p>
+        </div>
+
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title">// 仁王3 攻略記事</div>
+        <ul class="sidebar-list">
+          <li><a href="nioh3-guide.html">序盤おすすめ武器ガイド</a></li>
+          <li><a href="nioh3-boss.html">ボス攻略まとめ</a></li>
+          <li><a href="nioh3-build.html">最強ビルド紹介</a></li>
+          <li><a href="nioh3-style.html">戦いスタイル比較</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-title">// その他の記事</div>
+        <ul class="sidebar-list">
+          <li><a href="elden-ring.html">エルデンリング攻略</a></li>
+          <li><a href="headset-review.html">ヘッドセットレビュー</a></li>
+          <li><a href="gaming-setup.html">ゲーミング環境紹介</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card" style="background: rgba(124,106,255,0.05); border-color: rgba(124,106,255,0.3);">
+        <div class="sidebar-title">// PROFILE</div>
+        <p style="font-size: 0.78rem; color: var(--muted); line-height: 1.7;">ゲームと日常のぼやきをつらつらと書くブログ。仁王は1から全部クリア済み。死にゲー大好き人間。</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 ぼやきログ — BOYAKI_LOG.exe</div>
+    <div class="footer-links">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
