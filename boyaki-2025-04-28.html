@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【4/28ぼやき】駐車3回やり直し＆無視する同僚、どういうつもりなんだ｜ぼやきログ</title>
+
+<style>
+  :root{--bg:#0d0d10;--bg2:#13131a;--bg3:#1a1a24;--border:#252535;--border2:#303048;
+    --accent:#7c6aff;--accent2:#a594ff;--green:#4ade80;--red:#f87171;--yellow:#fbbf24;--cyan:#22d3ee;
+    --text:#ddd8f0;--muted:#7a7a9a;--faint:#44445a;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;font-weight:300;line-height:1.85;}
+  a{color:var(--accent2);text-decoration:none;}a:hover{text-decoration:underline;}
+  header{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+  .hi{max-width:1060px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+  .lw{display:flex;align-items:center;gap:.7rem;}
+  .li{width:32px;height:32px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+  .lt{font-family:'Share Tech Mono',monospace;font-size:1rem;color:#fff;}
+  .ls{font-size:.58rem;color:var(--muted);font-family:'Share Tech Mono',monospace;}
+  nav{display:flex;}
+  nav a{font-size:.72rem;letter-spacing:.06em;color:var(--muted);padding:.35rem .7rem;border:1px solid transparent;transition:all .18s;}
+  nav a:hover{color:var(--accent2);border-color:var(--border2);background:var(--bg3);text-decoration:none;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 1.5rem;}
+  .layout{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;padding:2rem 0 4rem;}
+  .bc{font-size:.7rem;color:var(--faint);margin-bottom:1rem;font-family:'Share Tech Mono',monospace;padding-top:1.2rem;}
+  .bc a{color:var(--muted);}
+  .cat{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.15em;padding:.2rem .6rem;border:1px solid;text-transform:uppercase;margin-bottom:1rem;}
+  .cr{color:var(--red);border-color:rgba(248,113,113,.4);background:rgba(248,113,113,.08);}
+  h1.at{font-family:'Noto Serif JP',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;line-height:1.4;color:#fff;margin-bottom:1rem;}
+  .am{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint);letter-spacing:.08em;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+  .ab p{margin-bottom:1.2rem;font-size:.92rem;}
+  .ab h2{font-family:'Noto Serif JP',serif;font-size:1.2rem;font-weight:700;color:#fff;margin:2.5rem 0 1rem;padding:.7rem 1rem;border-left:4px solid var(--accent);background:var(--bg2);}
+  .warn{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.3);border-left:4px solid var(--red);padding:1rem 1.2rem;margin:1.5rem 0;font-size:.88rem;}
+  .warn-h{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--red);margin-bottom:.5rem;}
+  .ad{background:var(--bg2);border:1px dashed var(--border2);padding:1.5rem;margin:2rem 0;text-align:center;position:relative;}
+  .adl{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--faint);text-transform:uppercase;position:absolute;top:.4rem;left:.6rem;}
+  .rel{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+  .sl{font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;}
+  .rg{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
+  .rc{background:var(--bg2);border:1px solid var(--border);padding:1rem;cursor:pointer;transition:border-color .2s;}
+  .rc:hover{border-color:var(--accent);}
+  .rcat{font-family:'Share Tech Mono',monospace;font-size:.58rem;letter-spacing:.15em;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase;}
+  .rt{font-size:.8rem;line-height:1.5;color:var(--text);}
+  .sb{}
+  .wg{background:var(--bg2);border:1px solid var(--border);padding:1.2rem;margin-bottom:1rem;}
+  .wh{font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:.7rem;margin-bottom:1rem;}
+  .ads{background:var(--bg2);border:1px dashed var(--border2);padding:1rem;margin-bottom:1rem;text-align:center;min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .pl{list-style:none;}
+  .pi{display:flex;gap:.7rem;padding:.7rem 0;border-bottom:1px solid var(--border);align-items:flex-start;cursor:pointer;}
+  .pi:last-child{border-bottom:none;}
+  .pn{font-family:'Share Tech Mono',monospace;font-size:1.2rem;color:var(--border2);width:1.5rem;flex-shrink:0;line-height:1;}
+  .pi:hover .pn{color:var(--accent);}
+  .pt{font-size:.78rem;line-height:1.45;color:var(--muted);}
+  .pi:hover .pt{color:var(--accent2);}
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 0;text-align:center;}
+  .fl{font-family:'Share Tech Mono',monospace;font-size:1rem;color:var(--accent2);margin-bottom:.4rem;}
+  .fc{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--faint);}
+  .fls{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1rem;}
+  .fls a{font-size:.72rem;color:var(--faint);}
+  .fls a:hover{color:var(--accent2);}
+  @media(max-width:780px){.layout{grid-template-columns:1fr;}nav{display:none;}.rg{grid-template-columns:1fr;}}
+</style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-382452921505359" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<header>
+  <div class="hi">
+    <a href="blog.html" style="text-decoration:none">
+      <div class="lw">
+        <div class="li">🎮</div>
+        <div><div class="lt">ぼやきログ</div><div class="ls">// BOYAKI_LOG.exe</div></div>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html">TOP</a><a href="nioh3-guide.html">ゲーム</a><a href="rant-gaming.html">愚痴</a><a href="rainy-day-gaming.html">日常</a><a href="frieren.html">アニメ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="bc"><a href="index.html">TOP</a> › <a href="rant-gaming.html">愚痴・ぼやき</a> › 記事</div>
+
+<div class="ad">
+  <span class="adl">// ADVERTISEMENT</span>
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-382452921505359"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+  <div class="layout">
+    <article>
+      <div class="cat cr">愚痴</div>
+      <h1 class="at">【4/28ぼやき】社用車を3回やり直しさせた挙句、無視してきた同僚の話</h1>
+      <div class="am">2026.04.28 &nbsp;|&nbsp; 読了約2分</div>
+      <div class="ab">
+
+<p>外出先からようやく帰社。疲れた体に鞭打って、社用車を定位置に戻そうとしたところで事件は起きた。</p>
+
+<p>駐車スペースの目の前で、よりによってあいつが作業してる。</p>
+
+<p>社内で一番顔を合わせたくない、お互い嫌いなのがバレバレのあの人。</p>
+
+<div class="ad">
+  <span class="adl">// ADVERTISEMENT</span>
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-382452921505359"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>3回やり直しって何？</h2>
+<p>作業の邪魔になってもいけないし、こっちも気を使いながら切り返す。でも向こうは動かない。ちょっとでも場所を空けてくれたら一発で入れられるのに、頑として動かない。</p>
+
+<p>結果、1回目ダメ。2回目ダメ。3回目でようやく収まった。</p>
+
+<p>……3回だぞ？ 3回。こっちがどれだけ消耗したと思ってんだ。</p>
+
+<div class="warn"><div class="warn-h">本日のイライラポイント</div>駐車に手こずってる車がいたら、普通ちょっとよけるか、せめて「そこ入れます？」くらい声かけるだろ。それが大人のコミュニケーションじゃないの？</div>
+
+<h2>せめて会釈くらいしろ</h2>
+<p>嫌いなのはわかってる。向こうも私のことが嫌いなのはわかってる。それはもうしょうがない。</p>
+
+<p>でもさ、同じ会社の人間として同じ空間にいるんだから、手を上げるとか、会釈するとか、最低限のやりとりくらいできないの？</p>
+
+<p>完全無視はさすがにどうかと思う。こっちはドライバーとして必死で切り返してんのに、目も合わせないって、それもう社会人としてどうなんだ。</p>
+
+<p>別に仲良くしろとは言ってない。ただ、同じ職場にいる人間として、最低限の礼儀だけは守ってくれ。それだけ。以上、4/28のぼやきでした。</p>
+
+<div class="ad">
+  <span class="adl">// ADVERTISEMENT</span>
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-382452921505359"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+        <div class="rel"><div class="sl">// 関連記事</div><div class="rg"><a href="rant-gaming.html" style="text-decoration:none;display:block"><div class="rc"><div class="rcat">愚痴</div><div class="rt">ゲーム中に話しかけてくる人、マジで何も考えてないの？</div></div></a><a href="rant-online.html" style="text-decoration:none;display:block"><div class="rc"><div class="rcat">愚痴</div><div class="rt">オンラインゲームで「下手くそ」って言ってくる人ってどういう精神してんの</div></a><a href="boyaki-2025-04-25.html" style="text-decoration:none;display:block"><div class="rc"><div class="rcat">愚痴</div><div class="rt">【4/25ぼやき】土曜出勤の理不尽さと、早くFIREしたい話</div></div></a></div></div>
+      </div>
+    </article>
+
+<aside class="sb">
+  <div class="ads">
+    <span style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--faint);display:block;margin-bottom:.5rem;">// AD</span>
+    <div style="font-size:.72rem;color:var(--muted);">サイドバー広告<br><br>
+      <span style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--faint)">AdSenseコードをここに貼る</span>
+    </div>
+  </div>
+  <div class="wg">
+    <div class="wh">// 人気記事</div>
+    <ul class="pl">
+      <li class="pi"><a href="nioh3-guide.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">01</div><div class="pt">【仁王3】序盤おすすめ武器と立ち回り完全ガイド</div></a></li>
+      <li class="pi"><a href="elden-ring.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">02</div><div class="pt">エルデンリングを今さらはじめたら100時間溶けた話</div></a></li>
+      <li class="pi"><a href="rant-gaming.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">03</div><div class="pt">ゲーム中に話しかけてくる人、マジで何も考えてないの？</div></a></li>
+      <li class="pi"><a href="rant-online.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">04</div><div class="pt">オンラインゲームで「下手くそ」って言ってくる人ってどういう精神してんの</div></a></li>
+      <li class="pi"><a href="rant-wifi.html" style="display:flex;gap:.7rem;align-items:flex-start;width:100%;text-decoration:none;color:inherit"><div class="pn">05</div><div class="pt">深夜にWi-Fiが重くなる現象、絶対に許せない</div></a></li>
+    </ul>
+  </div>
+  <div class="ads">
+    <span style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--faint);display:block;margin-bottom:.5rem;">// AD</span>
+    <div style="font-size:.72rem;color:var(--muted);">サイドバー広告２<br><br>
+      <span style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--faint)">AdSenseコードをここに貼る</span>
+    </div>
+  </div>
+  <div class="wg">
+    <div class="wh">// カテゴリー</div>
+    <a href="nioh3-guide.html" style="text-decoration:none;color:var(--muted);display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.8rem;">🎮 ゲーム攻略 <span style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint)">18</span></a>
+    <a href="rant-gaming.html" style="text-decoration:none;color:var(--muted);display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.8rem;">😤 愚痴・ぼやき <span style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint)">16</span></a>
+    <a href="rainy-day-gaming.html" style="text-decoration:none;color:var(--muted);display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.8rem;">🌿 日常の気づき <span style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint)">8</span></a>
+    <a href="frieren.html" style="text-decoration:none;color:var(--muted);display:flex;justify-content:space-between;padding:.5rem 0;font-size:.8rem;">📺 アニメ・マンガ <span style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--faint)">6</span></a>
+  </div>
+</aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">ぼやきログ // BOYAKI_LOG</div>
+    <div class="fls">
+      <a href="index.html">TOP</a><a href="contact.html">About</a><a href="privacy.html">プライバシーポリシー</a><a href="contact.html">お問い合わせ</a>
+    </div>
+    <div class="fc">© 2026 ぼやきログ — All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
